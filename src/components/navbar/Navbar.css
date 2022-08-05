@@ -1,0 +1,90 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ 
+    background-color: #fff;
+}
+.navbar__left{
+    display: flex;
+    align-items: center;
+    flex-basis: 30%;
+    margin: 10px;
+}
+.navbar__left .search_box{
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    background-color: rgba(231, 231, 231, 0.836);
+    margin-left: 10px;
+    border-radius: 20px;
+}
+.search_box input{
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background-color: transparent;
+}
+.navbar__left img{
+width: 40px;
+height: 40px;
+}
+.navbar__middle{
+    flex-basis: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.navbar__middle .icon{
+
+    color: gray;
+    padding: 10px;
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+}
+.navbar__middle .icon:hover{
+    background-color: rgba(221, 221, 221, 0.404);
+    cursor: pointer;
+}
+.icon.active{
+    color: var(--primary);
+    border-bottom: 3px solid dodgerblue;
+}
+.navbar__right{
+    flex-basis: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+.navbar__right img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 10px;
+}
+.navbar__right .icon{
+    color: #000;
+    background-color: rgba(221, 221, 221, 0.404);
+    padding: 7px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin: 0 5px;
+    position: relative;
+}
+
+.navbar__right .icon:hover{
+    cursor: pointer;
+    background-color: rgba(184, 184, 184, 0.527);
+}
+.message::after{
+    content: "3";
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    position: relative;
+    top: 0;
+    right: 0;
+}
