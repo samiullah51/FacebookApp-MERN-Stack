@@ -1,0 +1,17 @@
+.list__item{
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    margin: 15px 0;
+}
+.list__item .icon{
+    width: 35px;
+    height: 35px;
+margin-right: 10px;
+    color: var(--primary);
+   
+}
+.icon.ingredient{
+  
+    color: rgb(141, 34, 123);
+}
