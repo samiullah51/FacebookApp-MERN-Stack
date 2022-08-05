@@ -1,0 +1,167 @@
+.register{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .2;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../../public/images/bg.PNG');
+}
+.register__form{
+z-index: 11;
+background-color: #fff;
+max-width: 450px;
+   border-radius: 10px;
+  position: relative;
+}
+.form__header{
+    margin-bottom: 10px;
+    padding: 10px 20px ;
+}
+.form__header p{
+    margin-top: 5px;
+    color: gray;
+}
+.line{
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+}
+.form__body{
+
+    padding: 10px;
+}
+.group1{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.group1 input{
+    padding:10px;
+    font-size: 15px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+   margin: 5px;
+   background-color: rgba(233, 233, 233, 0.514);
+   width: 100%;
+}
+.group2{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.group2 input{
+    width: 98%;
+    padding:10px;
+    font-size: 15px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin: 5px 0;
+    background-color: rgba(233, 233, 233, 0.514);
+
+
+}
+.group3{
+    display: flex;
+    flex-direction: column;
+}
+.group3 p, .group4 p{
+    font-size: 12px;
+    color: gray;
+    margin: 5px;
+}
+.group3 p::after, .group4 p::after{
+    content: "?";
+width: 10px;
+height: 10px;
+padding: 0 5px;
+border-radius: 50%;
+    background-color: rgb(85, 85, 85);
+    color: #fff;
+    margin: 0 5px;
+}
+.selection{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+ 
+}
+.selection select{
+    padding: 7px;
+    flex: 1;
+    margin: 0 5px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.group4, .group3{
+    margin: 10px 0;
+}
+.group4 .select{
+    padding: 7px;
+    flex: 1;
+    margin: 0 5px;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.group4 .select label{
+    margin-left: 5px;
+}
+
+.privacy__content p{
+    font-size: 12px;
+    margin: 10px 5px;
+}
+.privacy__content span{
+    color: blue;
+}
+.form__body button{
+    width: 100%;
+    border: none;
+
+    background-color: var(--success);
+    outline: none;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin: 5px 0;
+    color: #fff;
+    transition: .3s;
+    text-align: center;
+    transition: .3s;
+
+}
+.form__body button:hover{
+    opacity: .8;
+    cursor: pointer;
+}
+.dismiss{
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    color: gray;
+    transition: .3s;
+}
+.dismiss:hover{
+    cursor: pointer;
+    color: rgb(87, 87, 87);
+}
