@@ -7,8 +7,17 @@ function Home() {
     <div className="home">
       {/* Navbar */}
       <Navbar />
-      {/* Sidebar */}
-      <Sidebar />
+      <div className="home__container">
+        {/* Sidebar */}
+        <Sidebar />
+        {/* Feed */}
+        <div>
+          <h2>Feed</h2>
+        </div>
+        <div>
+          <h2>Right</h2>
+        </div>
+      </div>
     </div>
   );
 }

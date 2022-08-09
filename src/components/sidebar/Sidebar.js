@@ -7,6 +7,8 @@ import StoreIcon from "@mui/icons-material/Store";
 import OndemandVideoIcon from "@mui/icons-material/OndemandVideo";
 import AvTimerIcon from "@mui/icons-material/AvTimer";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
+import FlagIcon from "@mui/icons-material/Flag";
+import DateRangeIcon from "@mui/icons-material/DateRange";
 function Sidebar() {
   return (
     <div className="sidebar">
@@ -35,6 +37,14 @@ function Sidebar() {
         <Listitem
           iconName={<BookmarkIcon className="icon ingredient" />}
           title="Saved"
+        />
+        <Listitem
+          iconName={<FlagIcon className="icon ingredient" />}
+          title="Pages"
+        />
+        <Listitem
+          iconName={<DateRangeIcon className="icon ingredient" />}
+          title="Events"
         />
       </div>
     </div>
