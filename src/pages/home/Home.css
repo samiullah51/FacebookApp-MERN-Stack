@@ -1,5 +1,5 @@
 .home__container{
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content:space-between;
 }

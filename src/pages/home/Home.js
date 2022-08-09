@@ -14,7 +14,7 @@ function Home() {
         {/* Feed */}
         <Feed />
 
-        <div>
+        <div style={{ flexBasis: "25%" }}>
           <h2>Right</h2>
         </div>
       </div>

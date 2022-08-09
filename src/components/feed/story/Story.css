@@ -1,0 +1,33 @@
+.story{
+    background-color: #fff;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 4px 1px rgba(0,0,0,0.1);
+}
+.story__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+font-weight: 500;
+color: gray;
+padding: 5px;
+}
+.story__header .active{
+    border-bottom: 3px solid dodgerblue;
+    color: dodgerblue;
+}
+.story__header p{
+    padding: 20px;
+    width: 100%;
+border-radius: 10px;
+margin: 0 10px;
+text-align: center;
+}
+.story__header p:hover{
+    background-color: rgba(184, 184, 184, 0.527);
+    cursor: pointer;
+}
+.line.story{
+    /* background-color: red; */
+    margin-top: -5px;
+}
