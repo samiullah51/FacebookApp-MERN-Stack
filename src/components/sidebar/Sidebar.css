@@ -1,6 +1,10 @@
 .sidebar{
     padding: 10px;
     flex-basis: 20%;
+    border-right: 1px solid rgba(128, 128, 128, 0.445);
+    border-radius: 0 30px 30px 0;
+ box-shadow: 0 0 9px 1px rgba(0,0,0,0.1) inset;
+
 }
 
 .sidebar .current__user{

@@ -9,6 +9,9 @@ import AvTimerIcon from "@mui/icons-material/AvTimer";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import FlagIcon from "@mui/icons-material/Flag";
 import DateRangeIcon from "@mui/icons-material/DateRange";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import SportsFootballIcon from "@mui/icons-material/SportsFootball";
+import SportsTennisIcon from "@mui/icons-material/SportsTennis";
 function Sidebar() {
   return (
     <div className="sidebar">
@@ -45,6 +48,22 @@ function Sidebar() {
         <Listitem
           iconName={<DateRangeIcon className="icon ingredient" />}
           title="Events"
+        />
+        <Listitem
+          iconName={<ExpandMoreIcon className="icon more" />}
+          title="See more"
+        />
+        <div className="line"></div>
+        <div className="shortcuts">
+          <p>Your shortcuts</p>
+        </div>
+        <Listitem
+          iconName={<SportsFootballIcon className="icon ingredient" />}
+          title="Basket Ball"
+        />
+        <Listitem
+          iconName={<SportsTennisIcon className="icon ingredient" />}
+          title="Tennis"
         />
       </div>
     </div>

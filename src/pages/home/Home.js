@@ -1,4 +1,5 @@
 import React from "react";
+import Feed from "../../components/feed/Feed";
 import Navbar from "../../components/navbar/Navbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import "./Home.css";
@@ -11,9 +12,8 @@ function Home() {
         {/* Sidebar */}
         <Sidebar />
         {/* Feed */}
-        <div>
-          <h2>Feed</h2>
-        </div>
+        <Feed />
+
         <div>
           <h2>Right</h2>
         </div>
