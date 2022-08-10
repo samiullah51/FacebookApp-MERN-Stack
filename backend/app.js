@@ -7,8 +7,8 @@ const connection = require("./connection");
 dotenv.config();
 
 // Database Connection
-
 connection();
+
 // Listening to a port
 app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT}`);

@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { data } from "./data";
 import "./Register.css";
 function Register() {
+  const [firstName, setFirtName] = useState("");
+  const [sureName, setSureName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [dob, setDob] = useState({});
+  const [gender, setGender] = useState("");
+
+  // handle Submit
+  const handleSubmit = () => {
+    console.log(firstName, sureName, email, password, dob, gender);
+  };
+
   return (
     <div className="register">
       <div className="overlay"></div>
@@ -16,34 +28,58 @@ function Register() {
         <div className="form__body">
           {/* Group1 */}
           <div className="group1">
-            <input type="text" placeholder="First name" />
-            <input type="text" placeholder="Sure name" />
+            <input
+              type="text"
+              value={firstName}
+              onChange={(e) => setFirtName(e.target.value)}
+              placeholder="First name"
+            />
+            <input
+              type="text"
+              value={sureName}
+              onChange={(e) => setSureName(e.target.value)}
+              placeholder="Sure name"
+            />
           </div>
           {/* Group 2 */}
           <div className="group2">
-            <input type="text" placeholder="Mobile number or email address" />
-            <input type="password" placeholder="New password" />
+            <input
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Mobile number or email address"
+            />
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="New password"
+            />
           </div>
           {/* Group 3 */}
           <div className="group3">
             <p>Date of Birth</p>
             <div className="selection">
               {/* Day */}
-              <select>
+              <select onChange={(e) => setDob({ ...dob, day: e.target.value })}>
                 {data.days.map((day) => (
                   <option>{day}</option>
                 ))}
               </select>
               {/* Month */}
-              <select>
+              <select
+                onChange={(e) => setDob({ ...dob, month: e.target.value })}
+              >
                 {data.months.map((month) => (
                   <option>{month}</option>
                 ))}
               </select>
               {/* Year */}
-              <select>
+              <select
+                onChange={(e) => setDob({ ...dob, year: e.target.value })}
+              >
                 {data.years.map((year) => (
-                  <option>{year}</option>
+                  <option value={year}>{year}</option>
                 ))}
               </select>
             </div>
@@ -53,15 +89,33 @@ function Register() {
             <p>Gender</p>
             <div className="selection">
               <div className="select">
-                <input type="radio" id="male" name="gender" value="Male" />
+                <input
+                  type="radio"
+                  id="male"
+                  name="gender"
+                  value="Male"
+                  onChange={(e) => setGender(e.target.value)}
+                />
                 <label for="male">Male</label>
               </div>
               <div className="select">
-                <input type="radio" id="female" name="gender" value="Female" />
+                <input
+                  type="radio"
+                  id="female"
+                  name="gender"
+                  value="Female"
+                  onChange={(e) => setGender(e.target.value)}
+                />
                 <label for="female">Female</label>
               </div>
               <div className="select">
-                <input type="radio" id="custom" name="gender" value="Custom" />
+                <input
+                  type="radio"
+                  id="custom"
+                  name="gender"
+                  value="Custom"
+                  onChange={(e) => setGender(e.target.value)}
+                />
                 <label for="custom">Custom</label>
               </div>
             </div>
@@ -79,7 +133,7 @@ function Register() {
               from us and can opt out at any time.
             </p>
           </div>
-          <button>Sign Up</button>
+          <button onClick={handleSubmit}>Sign Up</button>
         </div>
         <p className="dismiss">&times;</p>
       </div>
