@@ -1,0 +1,54 @@
+.postfrom{
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    box-shadow: 0 0 4px 1px rgba(0,0,0,0.1);
+
+}
+.postform__up{
+    display: flex;
+
+}
+.postform__up img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.postform__up input{
+    width: 100%;
+    outline: none;
+    border-radius: 20px;
+    border: none;
+    background-color: rgba(231, 231, 231, 0.836);
+    padding: 5px 15px;
+}
+.line{
+    margin: 10px 0;
+}
+.postform__down{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+ 
+    
+}
+.icon__group{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+ margin: 0 5px;
+ justify-content: center;
+ font-weight: 400;
+}
+.icon__group:hover{
+    background-color: rgba(221, 221, 221, 0.404);
+    cursor: pointer;
+}
+.icon{
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}

@@ -66,7 +66,12 @@ z-index: 1;
 width: 150px;
 height: 150px;
 border-radius: 50%;
+display: none;
+visibility: hidden;
 
+}
+.scroll__icon_back.active{
+    visibility: visible;
 }
 .scroll__icon:hover, .scroll__icon_back:hover{
     cursor: pointer;

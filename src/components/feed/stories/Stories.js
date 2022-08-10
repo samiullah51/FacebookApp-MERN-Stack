@@ -5,17 +5,20 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 function Stories() {
   const [scroll, setScroll] = useState(0);
-  let [count, setCount] = useState(1);
+  const [show, setShow] = useState(false);
   // handle Scroll
   const handleScroll = () => {
     if (scroll < 400) {
       setScroll(scroll + 200);
+      setShow(true);
     }
   };
   // handle back scroll
   const handleScrollBack = () => {
     if (scroll > 0) {
       setScroll(scroll - 200);
+    } else {
+      setShow(false);
     }
   };
   return (
@@ -33,7 +36,7 @@ function Stories() {
           onClick={handleScroll}
         />
         <KeyboardArrowLeftIcon
-          className="scroll__icon_back"
+          className={!show ? "scroll__icon_back" : "scroll__icon_back active"}
           onClick={handleScrollBack}
         />
         <Story
