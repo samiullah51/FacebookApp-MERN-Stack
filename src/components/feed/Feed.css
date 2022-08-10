@@ -1,4 +1,9 @@
 .feed{
     flex-basis: 50%;
     max-width: 750px;
+   height: 95vh;
+   overflow-y: scroll;
+}
+.feed::-webkit-scrollbar{
+    display: none;
 }
