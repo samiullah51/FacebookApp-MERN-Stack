@@ -1,0 +1,44 @@
+.story{
+    min-width: 130px;
+    height: 200px;
+    background-color: #ccc;
+    margin: 5px;
+    border-radius: 10px;
+    position: relative;
+    transition: .3s;
+    scroll-behavior: smooth;
+}
+.story img{
+    transition: .2s;
+
+}
+.story img:hover {
+     opacity: .8;
+     cursor: pointer;
+     transform: scale(1.01)
+     
+}
+.story .story__content{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+.story .profile__name{
+    color: #fff;
+position: absolute;
+bottom: 0;
+left: 0;
+margin: 5px;
+font-weight: 500;
+}
+.story .profile__image{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 5px;
+    border: 2px solid dodgerblue;
+    padding: 2px;
+}

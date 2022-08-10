@@ -1,11 +1,11 @@
 import React from "react";
 import "./Feed.css";
-import Story from "./story/Story";
+import Stories from "./stories/Stories";
 function Feed() {
   return (
     <div className="feed">
       {/* Story */}
-      <Story />
+      <Stories />
       {/* post form */}
 
       {/* Post */}
