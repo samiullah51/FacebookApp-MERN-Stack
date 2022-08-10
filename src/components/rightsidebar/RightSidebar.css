@@ -39,7 +39,13 @@
 .contact{
     display: flex;
     align-items: center;
-    margin: 5px 0;
+    margin: 6px 0;
+    padding: 5px;
+    border-radius: 10px;
+}
+.contact:hover{
+    background-color: rgba(204, 204, 204, 0.445);
+    cursor: pointer;
 }
 .contact p{
     font-weight: 500;

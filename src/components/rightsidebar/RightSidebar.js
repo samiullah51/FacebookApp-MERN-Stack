@@ -36,6 +36,39 @@ function RightSidebar() {
           <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Bill_Gates_2018.jpg/640px-Bill_Gates_2018.jpg" />
           <p>BillGates</p>
         </div>
+        <div className="contact">
+          <img src="https://i.mydramalist.com/QL1o6_5f.jpg" />
+          <p>Mark Lee</p>
+        </div>
+        <div className="contact">
+          <img src="https://i.tribune.com.pk/media/images/1924889-johnabraham-1551951353/1924889-johnabraham-1551951353.jpg" />
+          <p>johnabraham</p>
+        </div>
+
+        <div className="contact">
+          <img src="https://filmfare.wwmindia.com/thumb/content/2022/mar/salmankhantalksaboutsouthindian31648543539.jpg?width=1200&height=900" />
+          <p>Salman khan</p>
+        </div>
+        <div className="contact">
+          <img src="https://cdn.britannica.com/25/162425-050-B767198B/Aamir-Khan.jpg" />
+          <p>Aamir khan</p>
+        </div>
+        <div className="contact">
+          <img src="https://www.pinkvilla.com/imageresize/tom_mission_impossible.jpg?width=752&format=webp&t=pvorg" />
+          <p>Tom Cruise</p>
+        </div>
+        <div className="contact">
+          <img src="https://filmfare.wwmindia.com/thumb/content/2022/mar/salmankhantalksaboutsouthindian31648543539.jpg?width=1200&height=900" />
+          <p>Salman khan</p>
+        </div>
+        <div className="contact">
+          <img src="https://cdn.britannica.com/25/162425-050-B767198B/Aamir-Khan.jpg" />
+          <p>Aamir khan</p>
+        </div>
+        <div className="contact">
+          <img src="https://www.pinkvilla.com/imageresize/tom_mission_impossible.jpg?width=752&format=webp&t=pvorg" />
+          <p>Tom Cruise</p>
+        </div>
       </div>
     </div>
   );

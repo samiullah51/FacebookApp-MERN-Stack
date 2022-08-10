@@ -29,7 +29,7 @@ margin: 0 10px;
 text-align: center;
 }
 .stories__header p:hover{
-    background-color: rgba(184, 184, 184, 0.527);
+    background-color: rgba(184, 184, 184, 0.342);
     cursor: pointer;
 }
 .line.stories{

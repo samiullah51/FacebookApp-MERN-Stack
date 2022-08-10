@@ -44,7 +44,7 @@
  font-weight: 400;
 }
 .icon__group:hover{
-    background-color: rgba(221, 221, 221, 0.404);
+    background-color: rgba(221, 221, 221, 0.63);
     cursor: pointer;
 }
 .icon{
