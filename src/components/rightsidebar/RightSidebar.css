@@ -1,0 +1,53 @@
+.right__sidebar{
+    flex-basis: 25%;
+
+    padding: 20px;
+}
+.title{
+    font-weight: 500;
+    color: gray;
+}
+.gift{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+.gift p{
+    
+    color: rgb(51, 51, 51);
+    margin: 10px 5px ;
+}
+.gift .icon{
+    color: dodgerblue;
+    width: 40px;
+    height: 40px;
+}
+.contacts__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header__left p{
+    font-weight: 500;
+    color: gray;
+    font-size: 16px;
+}
+.header__right .icon{
+    margin: 0 7px;
+    color: gray;
+}
+.contact{
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+}
+.contact p{
+    font-weight: 500;
+    color: rgb(78, 78, 78);
+}
+.contact img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 5px;
+}

@@ -3,6 +3,7 @@
     max-width: 750px;
    height: 95vh;
    overflow-y: scroll;
+   padding: 5px;
 }
 .feed::-webkit-scrollbar{
     display: none;

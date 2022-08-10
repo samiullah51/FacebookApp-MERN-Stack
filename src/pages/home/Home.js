@@ -1,6 +1,7 @@
 import React from "react";
 import Feed from "../../components/feed/Feed";
 import Navbar from "../../components/navbar/Navbar";
+import RightSidebar from "../../components/rightsidebar/RightSidebar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import "./Home.css";
 function Home() {
@@ -13,10 +14,8 @@ function Home() {
         <Sidebar />
         {/* Feed */}
         <Feed />
-
-        <div style={{ flexBasis: "25%" }}>
-          <h2>Right</h2>
-        </div>
+        {/* Right Sidebar */}
+        <RightSidebar />
       </div>
     </div>
   );
