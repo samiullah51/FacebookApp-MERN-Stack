@@ -6,7 +6,7 @@ function Register() {
   const [sureName, setSureName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [dob, setDob] = useState({});
+  const [dob, setDob] = useState("");
   const [gender, setGender] = useState("");
 
   // handle Submit
@@ -61,23 +61,19 @@ function Register() {
             <p>Date of Birth</p>
             <div className="selection">
               {/* Day */}
-              <select onChange={(e) => setDob({ ...dob, day: e.target.value })}>
+              <select onChange={(e) => setDob(e.target.value)}>
                 {data.days.map((day) => (
                   <option>{day}</option>
                 ))}
               </select>
               {/* Month */}
-              <select
-                onChange={(e) => setDob({ ...dob, month: e.target.value })}
-              >
+              <select onChange={(e) => setDob(dob + "-" + e.target.value)}>
                 {data.months.map((month) => (
                   <option>{month}</option>
                 ))}
               </select>
               {/* Year */}
-              <select
-                onChange={(e) => setDob({ ...dob, year: e.target.value })}
-              >
+              <select onChange={(e) => setDob(dob + "-" + e.target.value)}>
                 {data.years.map((year) => (
                   <option value={year}>{year}</option>
                 ))}
