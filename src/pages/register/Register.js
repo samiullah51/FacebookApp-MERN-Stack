@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { data } from "./data";
 import "./Register.css";
@@ -10,8 +11,23 @@ function Register() {
   const [gender, setGender] = useState("");
 
   // handle Submit
-  const handleSubmit = () => {
-    console.log(firstName, sureName, email, password, dob, gender);
+  const handleSubmit = async () => {
+    try {
+      const newUser = await axios.post(
+        "http://localhost:8000/api/user/register",
+        {
+          firstName,
+          sureName,
+          email,
+          password,
+          dob,
+          gender,
+        }
+      );
+      console.log(newUser);
+    } catch (err) {
+      console.log(err.message);
+    }
   };
 
   return (

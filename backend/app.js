@@ -1,6 +1,7 @@
 const express = require("express");
 const dotenv = require("dotenv");
 const connection = require("./connection");
+const cors = require("cors");
 // import all routes
 const userRouter = require("./routes/user");
 
@@ -9,6 +10,9 @@ const app = express();
 
 // Configure dotenv
 dotenv.config();
+
+// Configure Cors
+app.use(cors());
 
 // Database Connection
 connection();
