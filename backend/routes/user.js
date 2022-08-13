@@ -1,7 +1,7 @@
 const User = require("../models/User");
-
 const router = require("express").Router();
 
+// Register new user
 router.post("/register", async (req, res) => {
   const checkExist = await User.findOne({ email: req.body.email });
   if (checkExist) {
@@ -22,6 +22,19 @@ router.post("/register", async (req, res) => {
     res.status(200).json(savedUser);
   } catch (err) {
     res.status(500).json(err.message);
+  }
+});
+
+// Log in existing user
+router.post("/login", async (req, res) => {
+  const checkExist = await User.findOne({
+    email: req.body.email,
+    password: req.body.password,
+  });
+  if (checkExist) {
+    res.status(200).json({ message: "Logged in Successfully!!!" });
+  } else {
+    res.status(400).json({ message: "Invalid Credential" });
   }
 });
 
