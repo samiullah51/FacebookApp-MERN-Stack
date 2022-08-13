@@ -1,6 +1,6 @@
 const User = require("../models/User");
 const router = require("express").Router();
-
+const CryptoJS = require("crypto-js");
 // Register new user
 router.post("/register", async (req, res) => {
   const checkExist = await User.findOne({ email: req.body.email });
@@ -13,13 +13,14 @@ router.post("/register", async (req, res) => {
       firstName: req.body.firstName,
       sureName: req.body.sureName,
       email: req.body.email,
-      password: req.body.password,
+      password: CryptoJS.AES.encrypt(req.body.password, process.env.PASS_SEC),
       dob: req.body.dob,
       gender: req.body.gender,
       profilePic: req.body.profilePic,
     });
     const savedUser = await newUser.save();
-    res.status(200).json(savedUser);
+    const { password, ...others } = savedUser._doc;
+    res.status(200).json(others);
   } catch (err) {
     res.status(500).json(err.message);
   }
@@ -27,14 +28,28 @@ router.post("/register", async (req, res) => {
 
 // Log in existing user
 router.post("/login", async (req, res) => {
-  const checkExist = await User.findOne({
-    email: req.body.email,
-    password: req.body.password,
-  });
-  if (checkExist) {
-    res.status(200).json({ message: "Logged in Successfully!!!" });
-  } else {
-    res.status(400).json({ message: "Invalid Credential" });
+  try {
+    const user = await User.findOne({ email: req.body.email });
+    if (!user) {
+      res.status(401).json("User not found");
+      return false;
+    }
+
+    const hashedPassword = CryptoJS.AES.decrypt(
+      user.password,
+      process.env.PASS_SEC
+    );
+    const realPassword = await hashedPassword.toString(CryptoJS.enc.Utf8);
+
+    if (realPassword !== req.body.password) {
+      res.status(401).json("Invalid Credentials");
+      return false;
+    }
+    const { password, ...others } = user._doc;
+
+    res.status(200).json(others);
+  } catch (err) {
+    res.status(500).json(err.message);
   }
 });
 
