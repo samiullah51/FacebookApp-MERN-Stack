@@ -3,6 +3,11 @@ const User = require("../models/User");
 const router = require("express").Router();
 
 router.post("/register", async (req, res) => {
+  const checkExist = await User.findOne({ email: req.body.email });
+  if (checkExist) {
+    res.status(300).json({ message: "User already exist" });
+    return false;
+  }
   try {
     const newUser = new User({
       firstName: req.body.firstName,
