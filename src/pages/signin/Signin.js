@@ -1,6 +1,26 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import "./Signin.css";
 function Signin() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  // hanlde Click
+  const handleClick = async () => {
+    try {
+      const signedIn = await axios.post(
+        "http://localhost:8000/api/user/login",
+        {
+          email,
+          password,
+        }
+      );
+      console.log(signedIn);
+    } catch (err) {
+      console.log(err.response.data);
+      alert(err.response.data);
+    }
+  };
+
   return (
     <div className="signin">
       {/* Left Section of the page */}
@@ -18,9 +38,21 @@ function Signin() {
       <div className="right">
         {/* Form Container */}
         <div className="form__container">
-          <input type="text" placeholder="Email address or phone number" />
-          <input type="password" placeholder="password" />
-          <button className="loginBtn">Log In</button>
+          <input
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email address or phone number"
+          />
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="password"
+          />
+          <button className="loginBtn" onClick={handleClick}>
+            Log In
+          </button>
           <a href="#">Forgotton Password?</a>
           <div className="line"></div>
           <button className="createBtn">Create New Account</button>

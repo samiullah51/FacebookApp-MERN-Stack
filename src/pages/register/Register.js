@@ -26,7 +26,7 @@ function Register() {
       );
       console.log(newUser);
     } catch (err) {
-      console.log(err.message);
+      console.log(err.response.data);
     }
   };
 
