@@ -12,6 +12,7 @@ function Feed() {
       <Postform />
       {/* Post */}
       <Post />
+      <Post />
     </div>
   );
 }

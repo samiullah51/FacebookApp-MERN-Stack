@@ -6,6 +6,7 @@ import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
 import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import ShareIcon from "@mui/icons-material/Share";
+import SendIcon from "@mui/icons-material/Send";
 function Post() {
   return (
     <div className="post">
@@ -36,16 +37,23 @@ function Post() {
       <div className="post__footer">
         <div className="icon__group">
           <ThumbUpOffAltIcon className="icon" />
-          <p>Live video</p>
+          <p>Like</p>
         </div>
         <div className="icon__group">
           <ChatBubbleOutlineIcon className="icon" />
-          <p>Photo/video</p>
+          <p>Comment</p>
         </div>
         <div className="icon__group">
           <ShareIcon className="icon" />
-          <p>Feeling/activity</p>
+          <p>Share</p>
         </div>
+      </div>
+      <div className="line" style={{ marginTop: "-2px" }}></div>
+      {/* feeback */}
+      <div className="feeback">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg/1200px-Elon_Musk_Royal_Society_%28crop2%29.jpg" />
+        <input type="text" placeholder="Write a comment..." />
+        <SendIcon className="icon" />
       </div>
     </div>
   );

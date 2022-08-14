@@ -46,5 +46,42 @@ margin-right: 5px;
 
 .post__footer{
     display: flex;
+    padding: 5px;
 }
 
+/* feeback */
+.feeback{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+.feeback img{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+.feeback input{
+    width: 100%;
+    outline: none;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin:0 5px;
+    border-radius: 20px;
+}
+.feeback .icon{
+color: #fff;
+    background-color: dodgerblue;
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    border-radius: 50%;
+    transform: rotate(-25deg);
+    transition: .2s;
+}
+.feeback .icon:hover{
+    cursor: pointer;
+    background-color: rgb(22, 95, 168);
+
+}

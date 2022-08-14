@@ -8,14 +8,17 @@ import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import MenuIcon from "@mui/icons-material/Menu";
 import MessageIcon from "@mui/icons-material/Message";
 import NotificationsIcon from "@mui/icons-material/Notifications";
+import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <div className="navbar">
       <div className="navbar__left">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Facebook_f_logo_%282021%29.svg/1200px-Facebook_f_logo_%282021%29.svg.png"
-          alt="facebook logo"
-        />
+        <Link to="/">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Facebook_f_logo_%282021%29.svg/1200px-Facebook_f_logo_%282021%29.svg.png"
+            alt="facebook logo"
+          />
+        </Link>
         <div className="search_box">
           <SearchIcon style={{ fontSize: "22px", color: "Gray" }} />
           <input type="text" placeholder="Search facebook" />
