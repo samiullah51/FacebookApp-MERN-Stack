@@ -93,10 +93,11 @@ margin-right: 5px;
 .feeback input{
     width: 100%;
     outline: none;
-    border: 1px solid #ccc;
+    background-color: rgba(204, 204, 204, 0.596);
     padding: 10px;
     margin:0 5px;
     border-radius: 20px;
+    border: none;
 }
 .feeback .icon{
 color: #fff;
