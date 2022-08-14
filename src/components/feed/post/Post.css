@@ -57,6 +57,9 @@ margin-right: 5px;
     justify-content: space-between;
     padding: 5px 10px;
 }
+.feeback.hide{
+    display: none;
+}
 .feeback img{
     width: 35px;
     height: 35px;

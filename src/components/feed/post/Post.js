@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Post.css";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import PublicIcon from "@mui/icons-material/Public";
@@ -8,6 +8,7 @@ import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import ShareIcon from "@mui/icons-material/Share";
 import SendIcon from "@mui/icons-material/Send";
 function Post() {
+  const [showComment, setShowComment] = useState(false);
   return (
     <div className="post">
       {/* Post header */}
@@ -39,7 +40,10 @@ function Post() {
           <ThumbUpOffAltIcon className="icon" />
           <p>Like</p>
         </div>
-        <div className="icon__group">
+        <div
+          className="icon__group"
+          onClick={() => setShowComment(!showComment)}
+        >
           <ChatBubbleOutlineIcon className="icon" />
           <p>Comment</p>
         </div>
@@ -50,7 +54,7 @@ function Post() {
       </div>
       <div className="line" style={{ marginTop: "-2px" }}></div>
       {/* feeback */}
-      <div className="feeback">
+      <div className={showComment ? "feeback" : "feeback hide"}>
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg/1200px-Elon_Musk_Royal_Society_%28crop2%29.jpg" />
         <input type="text" placeholder="Write a comment..." />
         <SendIcon className="icon" />
