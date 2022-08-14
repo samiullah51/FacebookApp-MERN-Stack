@@ -7,6 +7,7 @@ import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import ShareIcon from "@mui/icons-material/Share";
 import SendIcon from "@mui/icons-material/Send";
+import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 function Post() {
   const [showComment, setShowComment] = useState(false);
   return (
@@ -32,7 +33,14 @@ function Post() {
       <div className="post__body">
         <img src="https://img.etimg.com/thumb/msid-88517947,width-650,imgsize-32086,,resizemode-4,quality-100/bill-gates.jpg" />
       </div>
-      <div className="line"></div>
+      <div className="likes__comments">
+        <div className="like__container">
+          <ThumbUpAltIcon className="like__icon" />
+          <p>90</p>
+        </div>
+        <p>24 comments</p>
+      </div>
+      <div className="line" style={{ margin: "5px auto", width: "95%" }}></div>
 
       {/* Post footer */}
       <div className="post__footer">
@@ -52,7 +60,10 @@ function Post() {
           <p>Share</p>
         </div>
       </div>
-      <div className="line" style={{ marginTop: "-2px" }}></div>
+      <div
+        className={showComment && "line"}
+        style={{ margin: "5px auto", width: "95%" }}
+      ></div>
       {/* feeback */}
       <div className={showComment ? "feeback" : "feeback hide"}>
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg/1200px-Elon_Musk_Royal_Society_%28crop2%29.jpg" />
