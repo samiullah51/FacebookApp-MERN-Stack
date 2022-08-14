@@ -1,9 +1,11 @@
 import axios from "axios";
 import React, { useState } from "react";
 import "./Signin.css";
+import { useNavigate } from "react-router-dom";
 function Signin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  let navigate = useNavigate();
   // hanlde Click
   const handleClick = async () => {
     try {
@@ -15,9 +17,9 @@ function Signin() {
         }
       );
       console.log(signedIn);
+      navigate("/", { replace: true });
     } catch (err) {
       console.log(err.response.data);
-      alert(err.response.data);
     }
   };
 

@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useState } from "react";
 import { data } from "./data";
 import "./Register.css";
+import { useNavigate } from "react-router-dom";
+
 function Register() {
   const [firstName, setFirtName] = useState("");
   const [sureName, setSureName] = useState("");
@@ -9,6 +11,7 @@ function Register() {
   const [password, setPassword] = useState("");
   const [dob, setDob] = useState("");
   const [gender, setGender] = useState("");
+  let navigate = useNavigate();
 
   // handle Submit
   const handleSubmit = async () => {
@@ -25,6 +28,7 @@ function Register() {
         }
       );
       console.log(newUser);
+      navigate("/signin", { replace: true });
     } catch (err) {
       console.log(err.response.data);
     }
