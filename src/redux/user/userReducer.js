@@ -1,7 +1,7 @@
 import { LOG_IN } from "./userActions";
 
 const initialState = {
-  username: "sami",
+  user: null,
 };
 
 const userReducer = (state = initialState, action) => {

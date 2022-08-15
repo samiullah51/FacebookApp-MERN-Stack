@@ -12,15 +12,17 @@ import DateRangeIcon from "@mui/icons-material/DateRange";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import SportsFootballIcon from "@mui/icons-material/SportsFootball";
 import SportsTennisIcon from "@mui/icons-material/SportsTennis";
+import { useSelector } from "react-redux";
 function Sidebar() {
+  const user = useSelector((state) => state.user);
+
   return (
     <div className="sidebar">
       <div className="current__user">
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg/1200px-Elon_Musk_Royal_Society_%28crop2%29.jpg"
-          alt="profile img"
-        />
-        <p>Samiullah</p>
+        <img src={user.profilePic} alt="profile img" />
+        <p>
+          {user.firstName} {user.sureName}
+        </p>
       </div>
       <div className="list">
         <Listitem iconName={<PeopleIcon className="icon" />} title="Friends" />

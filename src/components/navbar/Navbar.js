@@ -8,9 +8,11 @@ import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import MenuIcon from "@mui/icons-material/Menu";
 import MessageIcon from "@mui/icons-material/Message";
 import NotificationsIcon from "@mui/icons-material/Notifications";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 function Navbar() {
+  const user = useSelector((state) => state.user);
   return (
     <div className="navbar">
       <div className="navbar__left">
@@ -35,10 +37,7 @@ function Navbar() {
         <MenuIcon className="icon" />
         <MessageIcon className="icon " />
         <NotificationsIcon className="icon " />
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Elon_Musk_Royal_Society_%28crop2%29.jpg/1200px-Elon_Musk_Royal_Society_%28crop2%29.jpg"
-          alt="profile img"
-        />
+        <img src={user.profilePic} alt="profile img" />
       </div>
     </div>
   );

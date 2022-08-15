@@ -3,12 +3,18 @@ import "./Postform.css";
 import VideocamIcon from "@mui/icons-material/Videocam";
 import CollectionsIcon from "@mui/icons-material/Collections";
 import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
+import { useSelector } from "react-redux";
 function Postform() {
+  const user = useSelector((state) => state.user);
+
   return (
     <div className="postfrom">
       <div className="postform__up">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQfV4SyNWWjln92bDavxpH_DpfAHG8LPOA_Q&usqp=CAU" />
-        <input type="text" placeholder="What's on your mind?" />
+        <img src={user.profilePic} />
+        <input
+          type="text"
+          placeholder={`What's on your mind, ${user.firstName}`}
+        />
       </div>
       <div className="line"></div>
       <div className="postform__down">
