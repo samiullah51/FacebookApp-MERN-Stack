@@ -8,10 +8,9 @@ import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import MenuIcon from "@mui/icons-material/Menu";
 import MessageIcon from "@mui/icons-material/Message";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+
 function Navbar() {
-  // const user = useSelector((state) => state.user);
   return (
     <div className="navbar">
       <div className="navbar__left">
