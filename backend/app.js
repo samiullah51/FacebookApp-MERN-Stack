@@ -4,7 +4,7 @@ const connection = require("./connection");
 const cors = require("cors");
 // import all routes
 const userRouter = require("./routes/user");
-
+const postRouter = require("./routes/post");
 // Configure app
 const app = express();
 
@@ -22,6 +22,7 @@ app.use(express.json());
 
 // Handling routes
 app.use("/api/user", userRouter);
+app.use("/api/post", postRouter);
 
 // Listenning to port
 app.listen(process.env.PORT, () => {

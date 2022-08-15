@@ -20,6 +20,12 @@ const PostSchema = new mongoose.Schema(
     poster: {
       type: String,
     },
+    likes: {
+      type: Number,
+    },
+    comments: {
+      type: Array,
+    },
   },
   { timestamps: true }
 );
