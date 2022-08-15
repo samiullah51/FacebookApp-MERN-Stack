@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Feed.css";
 import Stories from "./stories/Stories";
 import Postform from "./postform/Postform";
 import Post from "./post/Post";
+
+import axios from "axios";
+import { useSelector } from "react-redux";
 function Feed() {
+  const user = useSelector((state) => state.user);
+  const [posts, setPosts] = useState([]);
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const result = await axios.get("http://localhost:8000/api/post/allposts");
+      setPosts(result.data);
+    };
+    fetchPosts();
+  }, [user]);
+  console.log(posts);
+
   return (
     <div className="feed">
       {/* Story */}
@@ -11,8 +25,9 @@ function Feed() {
       {/* post form */}
       <Postform />
       {/* Post */}
-      <Post />
-      <Post />
+      {posts.map((post) => (
+        <Post post={post} />
+      ))}
     </div>
   );
 }

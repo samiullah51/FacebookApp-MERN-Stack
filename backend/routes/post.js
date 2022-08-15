@@ -21,4 +21,14 @@ router.post("/new", async (req, res) => {
   }
 });
 
+// Get all posts
+router.get("/allposts", async (req, res) => {
+  try {
+    const allPosts = await Post.find().sort("desc");
+    res.status(200).json(allPosts);
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
+});
+
 module.exports = router;
