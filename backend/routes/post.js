@@ -10,7 +10,6 @@ router.post("/new", async (req, res) => {
     desc: req.body.desc,
     poster: req.body.poster,
     likes: req.body.likes,
-    comments: req.body.comments,
   });
 
   try {
