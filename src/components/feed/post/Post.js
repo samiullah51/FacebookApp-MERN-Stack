@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Post.css";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import PublicIcon from "@mui/icons-material/Public";
@@ -11,6 +11,7 @@ import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import { useSelector } from "react-redux";
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en";
+import axios from "axios";
 
 TimeAgo.addDefaultLocale(en);
 function Post({ post }) {
@@ -18,6 +19,34 @@ function Post({ post }) {
   const user = useSelector((state) => state.user);
 
   const [showComment, setShowComment] = useState(false);
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState("");
+  // useEffect to get comments
+  useEffect(() => {
+    const fetchComments = async () => {
+      const result = await axios.get(
+        `http://localhost:8000/api/comments/allcomments/${post._id}`
+      );
+      setComments(result.data);
+      console.log(result.data);
+    };
+    fetchComments();
+  }, [user]);
+
+  // handleNewComment
+  const handleNewComment = async () => {
+    !newComment
+      ? alert("Type Comment")
+      : await axios.post(`http://localhost:8000/api/comments/new`, {
+          postId: post._id,
+          comments: {
+            byName: user?.firstName + " " + user?.sureName,
+            byPic: user?.profilePic,
+            byText: newComment,
+          },
+        });
+    setNewComment("");
+  };
 
   return (
     <div className="post">
@@ -47,10 +76,30 @@ function Post({ post }) {
           <ThumbUpAltIcon className="like__icon" />
           <p>90</p>
         </div>
-        <p>24 comments</p>
+        <p onClick={() => setShowComment(!showComment)}>
+          {comments.length} comments
+        </p>
       </div>
       <div className="line" style={{ margin: "5px auto", width: "95%" }}></div>
-
+      {/* Comments Container */}
+      <div className="comment__area">
+        {comments.map((comment) => (
+          <div
+            className={
+              showComment ? "comments__container" : "comments__container hide"
+            }
+          >
+            <img src={comment.comments?.byPic} />
+            <div className="comment__content">
+              <p className="by__name">{comment.comments?.byName}</p>
+              <p className="by__text">{comment.comments?.byText}</p>
+            </div>
+            <p className="comment__time">
+              {timeAgo.format(Date.parse(comment.createdAt))}
+            </p>
+          </div>
+        ))}
+      </div>
       {/* Post footer */}
       <div className="post__footer">
         <div className="icon__group">
@@ -76,8 +125,13 @@ function Post({ post }) {
       {/* feeback */}
       <div className={showComment ? "feeback" : "feeback hide"}>
         <img src={user.profilePic} />
-        <input type="text" placeholder="Write a comment..." />
-        <SendIcon className="icon" />
+        <input
+          type="text"
+          value={newComment}
+          onChange={(e) => setNewComment(e.target.value)}
+          placeholder="Write a comment..."
+        />
+        <SendIcon className="icon" onClick={handleNewComment} />
       </div>
     </div>
   );

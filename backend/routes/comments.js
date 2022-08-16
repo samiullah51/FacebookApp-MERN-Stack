@@ -19,7 +19,9 @@ router.post("/new", async (req, res) => {
 // Get all comments of specific post
 router.get("/allcomments/:postId", async (req, res) => {
   try {
-    const allComments = await Comments.find({ postId: req.params.postId });
+    const allComments = await Comments.find({ postId: req.params.postId }).sort(
+      { createdAt: -1 }
+    );
     res.status(200).json(allComments);
   } catch (err) {
     res.status(500).json(err.message);
