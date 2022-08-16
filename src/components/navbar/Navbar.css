@@ -57,12 +57,50 @@ height: 40px;
     align-items: center;
     justify-content: flex-end;
     margin-right: 20px;
+    position: relative;
+}
+.dropdown{
+    position: absolute;
+    bottom: -95px;
+    right: -5px;
+    background-color: dodgerblue;
+    color: #fff;
+    border-radius: 10px;
+
+}
+.dropdown.hide{
+    display: none;
+}
+.dropdown::before{
+    content: '';
+    position:absolute;
+    top: -10px;
+    left: 25px;
+    width: 20px;
+    height: 20px;
+    background-color: dodgerblue;
+    transform: rotate(45deg);
+    
+  
+}
+.dropdown p{
+    margin-top: 5px;
+    padding: 7px;
+    border-radius: 10px;
+ transition: .2s;
+}
+.dropdown p:hover{
+    background-color: rgb(24, 92, 161);
+    cursor: pointer;
 }
 .navbar__right img{
     width: 40px;
     height: 40px;
     border-radius: 50%;
     margin: 0 10px;
+    cursor: pointer;
+    border: 2px solid dodgerblue;
+    padding: 2px;
 }
 .navbar__right .icon{
     color: #000;

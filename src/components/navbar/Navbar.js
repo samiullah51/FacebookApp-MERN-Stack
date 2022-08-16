@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 import SearchIcon from "@mui/icons-material/Search";
 import HomeIcon from "@mui/icons-material/Home";
@@ -10,9 +10,18 @@ import MessageIcon from "@mui/icons-material/Message";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Navbar() {
   const user = useSelector((state) => state.user);
+  const [dropdown, setDropdown] = useState(false);
+  const navigate = useNavigate();
+  // handleLogOut
+  const handleLogOut = () => {
+    localStorage.clear();
+    navigate("/signin");
+  };
+
   return (
     <div className="navbar">
       <div className="navbar__left">
@@ -37,7 +46,15 @@ function Navbar() {
         <MenuIcon className="icon" />
         <MessageIcon className="icon " />
         <NotificationsIcon className="icon " />
-        <img src={user.profilePic} alt="profile img" />
+        <img
+          src={user.profilePic}
+          alt="profile img"
+          onClick={() => setDropdown(!dropdown)}
+        />
+        <div className={dropdown ? "dropdown" : "dropdown hide"}>
+          <p>Setting</p>
+          <p onClick={handleLogOut}>Log Out</p>
+        </div>
       </div>
     </div>
   );

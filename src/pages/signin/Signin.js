@@ -62,7 +62,9 @@ function Signin() {
           </button>
           <a href="#">Forgotton Password?</a>
           <div className="line"></div>
-          <button className="createBtn">Create New Account</button>
+          <button className="createBtn" onClick={() => navigate("/register")}>
+            Create New Account
+          </button>
         </div>
         <p>
           <b>Create a Page </b> for a celebrity, brand or business.
