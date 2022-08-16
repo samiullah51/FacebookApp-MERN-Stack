@@ -1,9 +1,13 @@
 import { LOG_IN } from "./userActions";
 
-const initialState = {
-  user: null,
+const getUserFromLocalStorage = () => {
+  const getUser = localStorage.getItem("user");
+  const existUser = JSON.parse(getUser);
+  return existUser;
 };
-
+const initialState = {
+  user: getUserFromLocalStorage(),
+};
 const userReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOG_IN:
