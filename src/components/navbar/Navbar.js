@@ -18,7 +18,7 @@ function Navbar() {
   const user = useSelector((state) => state.user);
   const [dropdown, setDropdown] = useState(false);
   const navigate = useNavigate();
-  const [image, setImage] = useState(null);
+  const [profileImage, setProfileImage] = useState(null);
   const [progress, setProgress] = useState(0);
   const [loading, setLoading] = useState(false);
   // handleLogOut
@@ -29,15 +29,18 @@ function Navbar() {
 
   // changeProfile
   const changeProfile = (e) => {
+    console.log("from profile");
     if (e.target.files[0]) {
-      setImage(e.target.files[0]);
+      setProfileImage(e.target.files[0]);
     }
   };
 
   // upload
   const updataPhoto = () => {
     setLoading(true);
-    const uploadTask = storage.ref(`images/${image.name}`).put(image);
+    const uploadTask = storage
+      .ref(`images/${profileImage.name}`)
+      .put(profileImage);
     uploadTask.on(
       "state_changed",
       (snapshot) => {
@@ -51,7 +54,7 @@ function Navbar() {
       () => {
         storage
           .ref("images")
-          .child(image.name)
+          .child(profileImage.name)
           .getDownloadURL()
           .then(async (url) => {
             const updatedPost = await axios.post(
@@ -98,18 +101,20 @@ function Navbar() {
           onClick={() => setDropdown(!dropdown)}
         />
         <div className={dropdown ? "dropdown" : "dropdown hide"}>
-          <label for="inputTag" className="inputTag">
+          <label for="profileInput" className="inputTag">
             <CameraAltIcon className="icon" />
             <input
-              id="inputTag"
+              id="profileInput"
               type="file"
               onChange={changeProfile}
               style={{ display: "none" }}
             />
           </label>
-          <p onClick={updataPhoto} style={{ textAlign: "center" }}>
-            {!loading ? "Upload" : `${progress}%`}
-          </p>
+          {profileImage && (
+            <p onClick={updataPhoto} style={{ textAlign: "center" }}>
+              {!loading ? "Update" : `${progress}%`}
+            </p>
+          )}
           <p onClick={handleLogOut}>Log Out</p>
         </div>
       </div>

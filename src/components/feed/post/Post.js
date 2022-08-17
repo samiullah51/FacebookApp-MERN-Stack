@@ -12,6 +12,7 @@ import { useSelector } from "react-redux";
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en";
 import axios from "axios";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
 
 TimeAgo.addDefaultLocale(en);
 function Post({ post }) {
@@ -21,6 +22,8 @@ function Post({ post }) {
   const [showComment, setShowComment] = useState(false);
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState("");
+  const [likes, setLikes] = useState(0);
+  const [isLike, setIsLike] = useState(false);
   // useEffect to get comments
   useEffect(() => {
     const fetchComments = async () => {
@@ -69,12 +72,14 @@ function Post({ post }) {
       </div>
       {/* post body */}
       <div className="post__body">
+        <p style={{ margin: "0 10px" }}>{post?.desc}</p>
         <img src={post?.poster} />
       </div>
       <div className="likes__comments">
         <div className="like__container">
           <ThumbUpAltIcon className="like__icon" />
-          <p>90</p>
+
+          <p>{!isLike ? likes : likes + 1}</p>
         </div>
         <p onClick={() => setShowComment(!showComment)}>
           {comments.length} comments
@@ -102,9 +107,14 @@ function Post({ post }) {
       </div>
       {/* Post footer */}
       <div className="post__footer">
-        <div className="icon__group">
-          <ThumbUpOffAltIcon className="icon" />
-          <p>Like</p>
+        <div className="icon__group" onClick={() => setIsLike(!isLike)}>
+          {!isLike ? (
+            <ThumbUpOffAltIcon className="icon" />
+          ) : (
+            <ThumbUpIcon className="icon" style={{ color: "dodgerblue" }} />
+          )}
+
+          <p style={{ color: isLike && "dodgerblue" }}>Like</p>
         </div>
         <div
           className="icon__group"

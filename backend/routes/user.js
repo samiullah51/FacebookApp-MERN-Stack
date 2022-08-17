@@ -2,6 +2,8 @@ const User = require("../models/User");
 const router = require("express").Router();
 const CryptoJS = require("crypto-js");
 const JWT = require("jsonwebtoken");
+const Post = require("../models/Post");
+
 // Register new user
 router.post("/register", async (req, res) => {
   const checkExist = await User.findOne({ email: req.body.email });
@@ -72,6 +74,7 @@ router.post("/editprofile/:id", async (req, res) => {
         },
       }
     );
+
     res.status(200).json(updatedProfile);
   } catch (err) {
     res.status(500).json(err.message);

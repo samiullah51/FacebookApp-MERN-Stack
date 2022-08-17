@@ -29,7 +29,7 @@ function Feed() {
       <Postform />
       {/* Post */}
       {loading ? (
-        <h3 style={{ textAlign: "center" }}>Loading...</h3>
+        <div className="loading"></div>
       ) : (
         posts.map((post) => <Post post={post} />)
       )}

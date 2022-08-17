@@ -8,3 +8,36 @@
 .feed::-webkit-scrollbar{
     display: none;
 }
+/* loading */
+.loading{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 5px solid dodgerblue;
+    margin: 20px auto;
+    border-bottom: 5px solid rgba(231, 231, 231, 0.836);
+    animation: example 2s ease 1s infinite ;
+    background-color: rgba(231, 231, 231, 0.836);;
+    
+  }
+
+@keyframes example {
+    0%   {
+        transform: rotate(360deg);
+        
+    }
+    25%{
+        border-color: rgb(11, 184, 77);
+        border-bottom: 5px solid rgba(231, 231, 231, 0.836);
+
+    }
+    50%{
+        border-color: rgb(184, 11, 175);
+        border-bottom: 5px solid rgba(231, 231, 231, 0.836);
+    }
+    80%{
+        border-color: rgb(181, 184, 11);
+        border-bottom: 5px solid rgba(231, 231, 231, 0.836);
+    }
+  }

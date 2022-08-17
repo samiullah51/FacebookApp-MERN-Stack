@@ -31,9 +31,11 @@ function Postform() {
   // setImage(URL.createObjectURL(e.target.files[0]))
   //handleChange
   const handleChange = (e) => {
+    console.log("testing... again");
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
       setShowImg(URL.createObjectURL(e.target.files[0]));
+      console.log(image, showImg);
     }
   };
   // handleSubmit
@@ -67,6 +69,7 @@ function Postform() {
             );
             setLoading(false);
             setModal(false);
+            window.location.reload();
           });
       }
     );
