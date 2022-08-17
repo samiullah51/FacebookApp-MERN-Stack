@@ -102,7 +102,7 @@ function Navbar() {
         />
         <div className={dropdown ? "dropdown" : "dropdown hide"}>
           <label for="profileInput" className="inputTag">
-            <CameraAltIcon className="icon" />
+            <CameraAltIcon className="icon" style={{ marginTop: "10px" }} />
             <input
               id="profileInput"
               type="file"
@@ -115,6 +115,7 @@ function Navbar() {
               {!loading ? "Update" : `${progress}%`}
             </p>
           )}
+          <Link to="/profile">Profile</Link>
           <p onClick={handleLogOut}>Log Out</p>
         </div>
       </div>

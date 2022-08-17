@@ -65,9 +65,10 @@ height: 40px;
     right: -5px;
     background-color: dodgerblue;
     color: #fff;
-    border-radius: 10px;
-
+    border-radius: 10px 10px 0 0;
+   width: 100px;
 }
+
 .dropdown.hide{
     display: none;
 }
@@ -75,7 +76,7 @@ height: 40px;
     content: '';
     position:absolute;
     top: -10px;
-    left: 25px;
+    right: 25px;
     width: 20px;
     height: 20px;
     background-color: dodgerblue;
@@ -83,14 +84,19 @@ height: 40px;
     
   
 }
-.dropdown p{
+.dropdown p, .dropdown a{
     margin-top: 5px;
     padding: 7px;
-    border-radius: 10px;
+color: #fff;
  transition: .2s;
+ text-decoration: none;
+ display: block;
+ width: 100%;
+ text-align: center;
+ 
 
 }
-.dropdown p:hover{
+.dropdown p:hover, .dropdown a:hover{
     background-color: rgb(16, 76, 136);
 
     cursor: pointer;

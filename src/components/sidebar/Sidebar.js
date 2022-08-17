@@ -13,17 +13,21 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import SportsFootballIcon from "@mui/icons-material/SportsFootball";
 import SportsTennisIcon from "@mui/icons-material/SportsTennis";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+
 function Sidebar() {
   const user = useSelector((state) => state.user);
 
   return (
     <div className="sidebar">
-      <div className="current__user">
-        <img src={user.profilePic} alt="profile img" />
-        <p>
-          {user.firstName} {user.sureName}
-        </p>
-      </div>
+      <Link to="/profile">
+        <div className="current__user">
+          <img src={user.profilePic} alt="profile img" />
+          <p>
+            {user.firstName} {user.sureName}
+          </p>
+        </div>
+      </Link>
       <div className="list">
         <Listitem iconName={<PeopleIcon className="icon" />} title="Friends" />
         <Listitem iconName={<GroupsIcon className="icon" />} title="Groups" />
