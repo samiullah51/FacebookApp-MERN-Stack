@@ -3,6 +3,7 @@
     height: 100vh;
     position: relative;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
@@ -21,6 +22,15 @@ background-color: #fff;
 max-width: 450px;
    border-radius: 10px;
   position: relative;
+}
+.Regerror
+{
+    margin:5px 0;
+   width: 450px;
+    padding: 5px;
+    background-color: rgb(192, 68, 68);
+    color: #fff;
+    text-align: center;
 }
 .form__header{
     margin-bottom: 10px;

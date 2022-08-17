@@ -7,7 +7,7 @@ import { LOG_IN } from "../../redux/user/userActions";
 function Signin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const [error, setError] = useState("");
   const dispatch = useDispatch();
   let navigate = useNavigate();
   // hanlde Click
@@ -24,7 +24,7 @@ function Signin() {
       localStorage.setItem("user", JSON.stringify(signedIn.data));
       navigate("/", { replace: true });
     } catch (err) {
-      console.log(err.response.data);
+      setError(err.response.data);
     }
   };
 
@@ -43,6 +43,9 @@ function Signin() {
       </div>
       {/* Right Section of the page */}
       <div className="right">
+        {/* Error */}
+        {error && <p className="error">{error}</p>}
+
         {/* Form Container */}
         <div className="form__container">
           <input

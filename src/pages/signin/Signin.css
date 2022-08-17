@@ -112,7 +112,12 @@
     opacity: .8;
     cursor: pointer;
 }
-
+/* error */
+.error{
+    padding: 5px;
+    background-color: rgb(192, 68, 68);
+    color: #fff;
+}
 
 /* Responsive */
 @media screen and  (max-width:900px){

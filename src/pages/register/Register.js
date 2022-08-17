@@ -11,10 +11,15 @@ function Register() {
   const [password, setPassword] = useState("");
   const [dob, setDob] = useState("");
   const [gender, setGender] = useState("");
+  const [error, setError] = useState("");
   let navigate = useNavigate();
 
   // handle Submit
   const handleSubmit = async () => {
+    if (!firstName || !sureName || !email || !password || !dob || !gender) {
+      setError("Please Enter the required Field");
+      return false;
+    }
     try {
       const newUser = await axios.post(
         "http://localhost:8000/api/user/register",
@@ -30,12 +35,13 @@ function Register() {
       console.log(newUser);
       navigate("/signin", { replace: true });
     } catch (err) {
-      console.log(err.response.data);
+      setError(err.response.data.message);
     }
   };
 
   return (
     <div className="register">
+      {error && <p className="Regerror">{error}</p>}
       <div className="overlay"></div>
       <div className="register__form">
         {/* header */}
@@ -151,7 +157,9 @@ function Register() {
           </div>
           <button onClick={handleSubmit}>Sign Up</button>
         </div>
-        <p className="dismiss">&times;</p>
+        <p className="dismiss" onClick={() => navigate("/signin")}>
+          &times;
+        </p>
       </div>
     </div>
   );
