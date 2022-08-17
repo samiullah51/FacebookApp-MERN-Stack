@@ -14,10 +14,14 @@ function Register() {
   const [error, setError] = useState("");
   let navigate = useNavigate();
 
-  // handle Submit
+  // handle Submit to register a user
   const handleSubmit = async () => {
+    // Check if all the inputs are filled correctly
     if (!firstName || !sureName || !email || !password || !dob || !gender) {
       setError("Please Enter the required Field");
+      return false;
+    } else if (!email.includes("@") || !email.includes(".com")) {
+      setError("Email is invalid");
       return false;
     }
     try {
@@ -32,7 +36,6 @@ function Register() {
           gender,
         }
       );
-      console.log(newUser);
       navigate("/signin", { replace: true });
     } catch (err) {
       setError(err.response.data.message);

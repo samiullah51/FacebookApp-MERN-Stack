@@ -31,7 +31,6 @@ function Post({ post }) {
         `http://localhost:8000/api/comments/allcomments/${post._id}`
       );
       setComments(result.data);
-      console.log(result.data);
     };
     fetchComments();
   }, [user]);

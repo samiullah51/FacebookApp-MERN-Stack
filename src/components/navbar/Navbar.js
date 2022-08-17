@@ -14,6 +14,7 @@ import { useNavigate } from "react-router-dom";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
 import { storage } from "../../firebase";
 import axios from "axios";
+
 function Navbar() {
   const user = useSelector((state) => state.user);
   const [dropdown, setDropdown] = useState(false);

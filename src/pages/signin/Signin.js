@@ -10,7 +10,8 @@ function Signin() {
   const [error, setError] = useState("");
   const dispatch = useDispatch();
   let navigate = useNavigate();
-  // hanlde Click
+
+  // hanlde Click to login a registered user
   const handleClick = async () => {
     try {
       const signedIn = await axios.post(

@@ -35,7 +35,6 @@ function Postform() {
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
       setShowImg(URL.createObjectURL(e.target.files[0]));
-      console.log(image, showImg);
     }
   };
   // handleSubmit
