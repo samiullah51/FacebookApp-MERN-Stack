@@ -19,7 +19,6 @@ function Feed() {
     };
     fetchPosts();
   }, [user]);
-  console.log(posts);
 
   return (
     <div className="feed">

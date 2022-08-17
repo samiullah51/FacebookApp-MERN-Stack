@@ -10,7 +10,6 @@ import axios from "axios";
 
 function Postform() {
   const user = useSelector((state) => state.user);
-  console.log("USER" + user.displayName);
   const [modal, setModal] = useState(false);
   const [image, setImage] = useState(null);
   const [showImg, setShowImg] = useState(null);
@@ -31,7 +30,6 @@ function Postform() {
   // setImage(URL.createObjectURL(e.target.files[0]))
   //handleChange
   const handleChange = (e) => {
-    console.log("testing... again");
     if (e.target.files[0]) {
       setImage(e.target.files[0]);
       setShowImg(URL.createObjectURL(e.target.files[0]));

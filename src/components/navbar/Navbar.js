@@ -30,7 +30,6 @@ function Navbar() {
 
   // changeProfile
   const changeProfile = (e) => {
-    console.log("from profile");
     if (e.target.files[0]) {
       setProfileImage(e.target.files[0]);
     }
