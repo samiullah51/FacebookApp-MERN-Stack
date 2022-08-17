@@ -61,7 +61,7 @@ height: 40px;
 }
 .dropdown{
     position: absolute;
-    bottom: -95px;
+    top: 55px;
     right: -5px;
     background-color: dodgerblue;
     color: #fff;
@@ -88,10 +88,10 @@ height: 40px;
     padding: 7px;
     border-radius: 10px;
  transition: .2s;
- background-color: rgb(196, 57, 57);
+
 }
 .dropdown p:hover{
-    background-color: rgb(161, 25, 25);
+    background-color: rgb(16, 76, 136);
 
     cursor: pointer;
 }

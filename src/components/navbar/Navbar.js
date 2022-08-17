@@ -61,6 +61,7 @@ function Navbar() {
               }
             );
             setLoading(false);
+            setDropdown(false);
             localStorage.clear();
             localStorage.setItem("user", JSON.stringify(updatedPost.data));
           });
