@@ -11,17 +11,62 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
+import CameraAltIcon from "@mui/icons-material/CameraAlt";
+import { storage } from "../../firebase";
+import axios from "axios";
 function Navbar() {
   const user = useSelector((state) => state.user);
   const [dropdown, setDropdown] = useState(false);
   const navigate = useNavigate();
+  const [image, setImage] = useState(null);
+  const [progress, setProgress] = useState(0);
+  const [loading, setLoading] = useState(false);
   // handleLogOut
   const handleLogOut = () => {
     localStorage.clear();
     navigate("/signin");
   };
 
+  // changeProfile
+  const changeProfile = (e) => {
+    if (e.target.files[0]) {
+      setImage(e.target.files[0]);
+    }
+  };
+
+  // upload
+  const updataPhoto = () => {
+    setLoading(true);
+    const uploadTask = storage.ref(`images/${image.name}`).put(image);
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        setProgress(
+          Math.floor((snapshot.bytesTransferred / snapshot.totalBytes) * 100)
+        );
+      },
+      (error) => {
+        console.log(error);
+      },
+      () => {
+        storage
+          .ref("images")
+          .child(image.name)
+          .getDownloadURL()
+          .then(async (url) => {
+            const updatedPost = await axios.post(
+              `http://localhost:8000/api/user/editprofile/${user._id}`,
+              {
+                profilePic: url,
+              }
+            );
+            setLoading(false);
+            localStorage.clear();
+            localStorage.setItem("user", JSON.stringify(updatedPost.data));
+          });
+      }
+    );
+  };
   return (
     <div className="navbar">
       <div className="navbar__left">
@@ -52,7 +97,18 @@ function Navbar() {
           onClick={() => setDropdown(!dropdown)}
         />
         <div className={dropdown ? "dropdown" : "dropdown hide"}>
-          <p>Setting</p>
+          <label for="inputTag" className="inputTag">
+            <CameraAltIcon className="icon" />
+            <input
+              id="inputTag"
+              type="file"
+              onChange={changeProfile}
+              style={{ display: "none" }}
+            />
+          </label>
+          <p onClick={updataPhoto} style={{ textAlign: "center" }}>
+            {!loading ? "Upload" : `${progress}%`}
+          </p>
           <p onClick={handleLogOut}>Log Out</p>
         </div>
       </div>

@@ -61,4 +61,20 @@ router.post("/login", async (req, res) => {
   }
 });
 
+// change profile pic
+router.post("/editprofile/:id", async (req, res) => {
+  try {
+    const updatedProfile = await User.findByIdAndUpdate(
+      { _id: req.params.id },
+      {
+        $set: {
+          profilePic: req.body.profilePic,
+        },
+      }
+    );
+    res.status(200).json(updatedProfile);
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
+});
 module.exports = router;

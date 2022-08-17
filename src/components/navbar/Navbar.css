@@ -88,9 +88,11 @@ height: 40px;
     padding: 7px;
     border-radius: 10px;
  transition: .2s;
+ background-color: rgb(196, 57, 57);
 }
 .dropdown p:hover{
-    background-color: rgb(24, 92, 161);
+    background-color: rgb(161, 25, 25);
+
     cursor: pointer;
 }
 .navbar__right img{
@@ -125,4 +127,8 @@ height: 40px;
     position: relative;
     top: 0;
     right: 0;
+}
+.inputTag .icon{
+    margin: 0 25%;
+    color: #fff;
 }

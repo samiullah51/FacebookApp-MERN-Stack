@@ -5,11 +5,18 @@ import CollectionsIcon from "@mui/icons-material/Collections";
 import InsertEmoticonIcon from "@mui/icons-material/InsertEmoticon";
 import { useSelector } from "react-redux";
 import CameraAltIcon from "@mui/icons-material/CameraAlt";
+import { storage } from "../../../firebase";
+import axios from "axios";
+
 function Postform() {
   const user = useSelector((state) => state.user);
+  console.log("USER" + user.displayName);
   const [modal, setModal] = useState(false);
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState(null);
+  const [showImg, setShowImg] = useState(null);
   const [desc, setDesc] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [progress, setProgress] = useState(0);
   // handleNewPost
   const handleNewPost = () => {
     setModal(true);
@@ -20,6 +27,49 @@ function Postform() {
     setImage("");
     setDesc("");
     setModal(false);
+  };
+  // setImage(URL.createObjectURL(e.target.files[0]))
+  //handleChange
+  const handleChange = (e) => {
+    if (e.target.files[0]) {
+      setImage(e.target.files[0]);
+      setShowImg(URL.createObjectURL(e.target.files[0]));
+    }
+  };
+  // handleSubmit
+  const handleSubmit = () => {
+    setLoading(true);
+    const uploadTask = storage.ref(`images/${image.name}`).put(image);
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        setProgress((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+      },
+      (error) => {
+        console.log(error);
+      },
+      () => {
+        storage
+          .ref("images")
+          .child(image.name)
+          .getDownloadURL()
+          .then(async (url) => {
+            const newPost = await axios.post(
+              "http://localhost:8000/api/post/new",
+              {
+                userId: user._id,
+                profilePic: user.profilePic,
+                displayName: user.firstName + " " + user.sureName,
+                desc: desc,
+                poster: url,
+                likes: 14,
+              }
+            );
+            setLoading(false);
+            setModal(false);
+          });
+      }
+    );
   };
   return (
     <div className="postfrom">
@@ -64,16 +114,14 @@ function Postform() {
                 onChange={(e) => setDesc(e.target.value)}
                 placeholder="Write something about your post..."
               />
-              {image && <img src={image} />}
+              {showImg && <img src={showImg} />}
 
               <label for="inputTag">
                 <CameraAltIcon className="icon" />
                 <input
                   id="inputTag"
                   type="file"
-                  onChange={(e) =>
-                    setImage(URL.createObjectURL(e.target.files[0]))
-                  }
+                  onChange={handleChange}
                   style={{ display: "none" }}
                 />
               </label>
@@ -84,7 +132,9 @@ function Postform() {
               <button className="cancelBtn" onClick={handleCancel}>
                 Cancel
               </button>
-              <button className="postBtn">Post</button>
+              <button className="postBtn" onClick={handleSubmit}>
+                {loading ? `Uploading... ${progress}%` : "Post"}
+              </button>
             </div>
           </div>
         </div>
