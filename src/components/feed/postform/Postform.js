@@ -42,7 +42,9 @@ function Postform() {
     uploadTask.on(
       "state_changed",
       (snapshot) => {
-        setProgress((snapshot.bytesTransferred / snapshot.totalBytes) * 100);
+        setProgress(
+          Math.floor(snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        );
       },
       (error) => {
         console.log(error);

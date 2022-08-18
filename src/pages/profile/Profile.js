@@ -32,11 +32,15 @@ function Profile() {
           </div>
           <div className="profile__right">
             <h2>All Posts ({allPosts.length})</h2>
-            <div className="posters">
-              {allPosts.map((singlePost) => (
-                <SinglePost singlePost={singlePost} />
-              ))}
-            </div>
+            {allPosts.length > 0 ? (
+              <div className="posters">
+                {allPosts.map((singlePost) => (
+                  <SinglePost singlePost={singlePost} />
+                ))}
+              </div>
+            ) : (
+              <h2>You have not post yet</h2>
+            )}
           </div>
         </div>
       </div>

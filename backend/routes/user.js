@@ -80,4 +80,17 @@ router.post("/editprofile/:id", async (req, res) => {
     res.status(500).json(err.message);
   }
 });
+
+// Get all the registered users
+router.get("/allusers", async (req, res) => {
+  try {
+    const allUsers = await User.find().sort({
+      createdAt: -1,
+    });
+    res.status(200).json(allUsers);
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
+});
+
 module.exports = router;
