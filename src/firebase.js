@@ -1,7 +1,7 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/storage";
 const firebaseConfig = {
-  apiKey: "AIzaSyBE-8rn49ivMFHKZ4LKYOFweiwmL34e-38",
+  apiKey: process.env.API_KEY,
   authDomain: "facebook-app-9fdab.firebaseapp.com",
   projectId: "facebook-app-9fdab",
   storageBucket: "facebook-app-9fdab.appspot.com",
