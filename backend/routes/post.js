@@ -30,4 +30,15 @@ router.get("/allposts", async (req, res) => {
   }
 });
 
+// All post of specific user
+router.get("/allposts/:userId", async (req, res) => {
+  try {
+    const allPosts = await Post.find({ userId: req.params.userId }).sort({
+      createdAt: -1,
+    });
+    res.status(200).json(allPosts);
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
+});
 module.exports = router;

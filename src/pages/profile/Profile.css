@@ -22,4 +22,22 @@
 .profile__right h2{
     text-align: center;
     font-weight: 500;
+    margin-bottom: 10px;
+}
+.posters{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+    overflow-y: scroll;
+    height: 630px;
+}
+.posters::-webkit-scrollbar{
+    width: 5px;
+}
+.posters::-webkit-scrollbar-track{
+    background-color: #fff;
+}
+.posters::-webkit-scrollbar-thumb{
+    background-color: dodgerblue;
 }
