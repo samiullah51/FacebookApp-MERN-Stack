@@ -41,4 +41,14 @@ router.get("/allposts/:userId", async (req, res) => {
     res.status(500).json(err.message);
   }
 });
+
+// Delete A specific post
+router.delete("/delete/:id", async (req, res) => {
+  try {
+    const allPosts = await Post.findByIdAndDelete({ _id: req.params.id });
+    res.status(200).json({ message: "Deleted Successfully" });
+  } catch (err) {
+    res.status(500).json(err.message);
+  }
+});
 module.exports = router;
