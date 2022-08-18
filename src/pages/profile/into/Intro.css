@@ -1,0 +1,27 @@
+.intro{
+    /* background-color: #fff; */
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+}
+.intro__header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.intro__header img{
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    padding: 2px;
+    border: 2px solid dodgerblue;
+}
+.profile__name{
+    font-size: 30px;
+    font-weight: 500;
+}
+.intro__body p{
+    font-size: 18px;
+    margin: 5px 0;
+}
