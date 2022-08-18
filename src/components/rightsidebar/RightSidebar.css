@@ -72,3 +72,11 @@
     border-radius: 50%;
     margin-right: 5px;
 }
+
+/* Responsive */
+@media screen and (max-width:500px) {
+    .right__sidebar{
+       display: none;
+    }
+
+}

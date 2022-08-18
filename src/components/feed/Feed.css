@@ -41,3 +41,10 @@
         border-bottom: 5px solid rgba(231, 231, 231, 0.836);
     }
   }
+/* Responsive */
+@media screen and (max-width:500px) {
+    .feed{
+       flex-basis: 98%;
+    }
+
+}

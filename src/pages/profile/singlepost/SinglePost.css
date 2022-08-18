@@ -31,3 +31,12 @@
   
    border-color:  dodgerblue;
 }
+/* Responsive */
+@media screen and (max-width:500px) {
+    .single__post img{
+       width: 150px;
+       height: 200px;
+    }
+
+
+}

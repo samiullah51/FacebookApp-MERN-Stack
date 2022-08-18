@@ -4,6 +4,7 @@
     justify-content: space-between;
  box-shadow: 0 0 9px 1px rgba(0,0,0,0.1);
     background-color: #fff;
+    width: 100%;
 }
 .navbar__left{
     display: flex;
@@ -67,6 +68,7 @@ height: 40px;
     color: #fff;
     border-radius: 10px 10px 0 0;
    width: 100px;
+   z-index: 12;
 }
 
 .dropdown.hide{
@@ -137,4 +139,18 @@ color: #fff;
 .inputTag .icon{
     margin: 0 25%;
     color: #fff;
+}
+
+/* Responsive */
+@media screen and (max-width:500px) {
+    .navbar{
+        width: 100vw;
+    }
+   .navbar__middle{
+    display: none;
+   }
+ 
+   .navbar__left .search_box{
+   display: none;
+   }
 }

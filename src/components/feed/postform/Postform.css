@@ -154,3 +154,16 @@ transition: .2s;
     color: rgb(36, 206, 65);
     cursor: pointer;
 }
+
+/* Responsive */
+@media screen and (max-width:500px) {
+    .postform__down{
+       font-size: 12px;
+    }
+    .modal__box{
+        width: 90%;
+    }
+    .modal__box img{
+        width: 100%;
+    }
+}

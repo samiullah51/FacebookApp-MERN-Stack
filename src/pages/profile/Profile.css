@@ -8,6 +8,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+   
 }
 .profile__left{
     flex-basis: 30%;
@@ -40,4 +41,17 @@
 }
 .posters::-webkit-scrollbar-thumb{
     background-color: dodgerblue;
+}
+/* Responsive */
+@media screen and (max-width:500px) {
+    .profile__body{
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+    }
+    .posters{
+        height: 200px;
+    }
+    
+
 }
