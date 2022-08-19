@@ -1,4 +1,14 @@
-# Getting Started with Create React App
+# Description
+This is the clone of facebook app using the modern technologies.  
+
+## Frontend Technologies
+React/Redux + CSS
+
+## Backend Technologies
+Node/Express
+
+## Database
+MongoDB use as a databse.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
