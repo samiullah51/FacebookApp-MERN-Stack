@@ -1,6 +1,6 @@
 # MERN Stack Facebook App
 ## Description
-This is the clone of facebook app using the modern technologies.  
+This is the clone of facebook app using the modern web technologies.  
 
 ## Frontend Technologies
 React/Redux + CSS
