@@ -1,4 +1,4 @@
-# MERN Stack Facebook App
+# MERN Stack Facebook Application
 This is the clone of facebook app using the modern web technologies.  
 
 ## Frontend Technologies
