@@ -1,4 +1,5 @@
 ## MERN Stack Facebook Application
+Open [Live Demo](http://facebook51728.herokuapp.com/)
 This is the clone of facebook Application using the modern web technologies.  
 
 ## Frontend Technologies
