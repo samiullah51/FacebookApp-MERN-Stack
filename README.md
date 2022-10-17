@@ -7,25 +7,25 @@ This is the clone of facebook Application using the modern web technologies.
 </div>
 
 ## Home Page
-<img src="https://github.com/samiullah51/FacebookApp-MERN-Stack/blob/main/3.PNG" width="80%" height="450">
+<img src="https://github.com/samiullah51/FacebookApp-MERN-Stack/blob/main/src/3.PNG" width="80%" height="450">
 
 ## Sign Up Page
-<img src="https://github.com/samiullah51/FacebookApp-MERN-Stack/blob/main/2.PNG" width="80%" height="450">
+<img src="https://github.com/samiullah51/FacebookApp-MERN-Stack/blob/main/src/2.PNG" width="80%" height="450">
 
 ## Sign In Page
-<img src="https://github.com/samiullah51/FacebookApp-MERN-Stack/blob/main/1.PNG" width="80%" height="450">
+<img src="https://github.com/samiullah51/FacebookApp-MERN-Stack/blob/main/src/1.PNG" width="80%" height="450">
 
 ## Single Post with comments and like features
-<img src="https://github.com/samiullah51/FacebookApp-MERN-Stack/blob/main/4.PNG" width="50%" height="450">
+<img src="https://github.com/samiullah51/FacebookApp-MERN-Stack/blob/main/src/4.PNG" width="50%" height="450">
 
 ## All Users
-<img src="https://github.com/samiullah51/FacebookApp-MERN-Stack/blob/main/5.PNG" width="40%" height="450">
+<img src="https://github.com/samiullah51/FacebookApp-MERN-Stack/blob/main/src/5.PNG" width="40%" height="450">
 
 ## New Post
-<img src="https://github.com/samiullah51/FacebookApp-MERN-Stack/blob/main/6.PNG" width="80%" height="450">
+<img src="https://github.com/samiullah51/FacebookApp-MERN-Stack/blob/main/src/6.PNG" width="80%" height="450">
 
 ## Profile Page
-<img src="https://github.com/samiullah51/FacebookApp-MERN-Stack/blob/main/7.PNG" width="80%" height="450">
+<img src="https://github.com/samiullah51/FacebookApp-MERN-Stack/blob/main/src/7.PNG" width="80%" height="450">
 
 ## Frontend Technologies
 React/Redux + CSS
