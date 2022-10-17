@@ -6,6 +6,8 @@ This is the clone of facebook Application using the modern web technologies.
   </a>
 </div>
 
+<img src="https://postimg.cc/Ff189KTf" width="100%" height="260">
+
 ## Frontend Technologies
 React/Redux + CSS
 
