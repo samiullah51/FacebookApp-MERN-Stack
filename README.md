@@ -1,6 +1,10 @@
 ## MERN Stack Facebook Application
-Open [Live Demo](http://facebook51728.herokuapp.com/)
 This is the clone of facebook Application using the modern web technologies.  
+<div id="badges">
+  <a href="http://facebook51728.herokuapp.com/">
+    <img src="https://img.shields.io/badge/Live Demo-dodgerblue?style=for-the-badge&logo=li&logoColor=white"  alt="Li"/>
+  </a>
+</div>
 
 ## Frontend Technologies
 React/Redux + CSS
